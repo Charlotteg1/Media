@@ -12,6 +12,15 @@ public class BookTest {
         book= new Book("Great Gatsby","English", LocalDate.parse("1925-04-10"),"Fitzgerald",356,true,9.99,1000);
     }
     @Test
+    public void canGetTitle(){
+        assertThat(book.getTitle()).isEqualTo("Great Gatsby");
+    }
+    @Test
+    public void canSetTitle(){
+        book.setTitle("Harry Potter");
+        assertThat(book.getTitle()).isEqualTo("Harry Potter");
+    }
+    @Test
     public void canGetAuthor(){
         assertThat(book.getAuthor()).isEqualTo("Fitzgerald");
     }
@@ -38,7 +47,15 @@ public class BookTest {
         book.setAudioBookAvailable(false);
         assertThat(book.isAudioBookAvailable()).isEqualTo(false);
     }
-
+    @Test
+    public void canGetPrice(){
+        assertThat(book.getPrice()).isEqualTo(9.99);
+    }
+    @Test
+    public void canSetPrice(){
+        book.setPrice(3.50);
+        assertThat(book.getPrice()).isEqualTo(3.50);
+    }
     @Test
     public void canGetPhysicalCopiesSold(){
         assertThat(book.getPhysicalCopiesSold()).isEqualTo(1000);
@@ -57,5 +74,8 @@ public class BookTest {
     public void canCalculateRevenue(){
         assertThat( book.calculateRevenue()).isEqualTo(9990);
         assertThat( book.calculateRevenue(1000)).isEqualTo(10990);
+    }
+    public void canStateMediaType(){
+        assertThat(book.stateMediaType()).isEqualTo("Print media");
     }
 }

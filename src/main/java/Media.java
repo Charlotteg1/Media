@@ -9,6 +9,7 @@ public abstract class  Media {
         this.language = language;
         this.releaseDate = releaseDate;
     }
+    public abstract String stateMediaType();
     public String getTitle() {
         return this.title;
     }

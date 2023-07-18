@@ -44,9 +44,15 @@ public class Film extends Media{
     public void setRevenue(double revenue) {
         this.revenue = revenue;
     }
-    public double calculateProfit(){
+    public void updateRevenue(double extraRevenue){
+        this.revenue =this.revenue +extraRevenue;
+    }
+    public double calculateProfit(){ // this would also show if the film created a loss.
 
         return this.revenue - this.productionCost;
+    }
+    public String stateMediaType(){
+        return "Broadcasting";
     }
 
 }

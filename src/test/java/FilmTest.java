@@ -11,7 +11,15 @@ public class FilmTest {
     public void setUp(){
         film= new Film("Barbie","English", LocalDate.parse("2023-07-13"),"Gerwig",true,123,100,300);
     }
-
+    @Test
+    public void canGetLanguage(){
+        assertThat(film.getLanguage()).isEqualTo("English");
+    }
+    @Test
+    public void canSetLanguage(){
+        film.setLanguage("Spanish");
+        assertThat(film.getLanguage()).isEqualTo("Spanish");
+    }
     @Test
     public void canGetDirector(){
         assertThat(film.getDirector()).isEqualTo("Gerwig");
@@ -58,9 +66,17 @@ public class FilmTest {
         assertThat(film.getRevenue()).isEqualTo(468);
     }
     @Test
+    public void canUpdateRevenue(){
+        film.updateRevenue(50);
+        assertThat(film.getRevenue()).isEqualTo(350);
+    }
+    @Test
     public void canCalculateProfit(){
         film.setRevenue(100);
         film.setProductionCost(20);
         assertThat(film.calculateProfit()).isEqualTo(80);
+    }
+    public void canStateMediaType(){
+        assertThat(film.stateMediaType()).isEqualTo("Broadcasting");
     }
 }

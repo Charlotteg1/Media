@@ -12,7 +12,15 @@ public class TelevisionTest {
     public void setUp() {
         television = new Television("Money Heist", "Spanish", LocalDate.parse("2014-08-24"), "john", 8, 42,LocalDate.parse("2022-03-18"));
     }
-
+    @Test
+    public void canGetReleaseDate(){
+        assertThat(television.getReleaseDate()).isEqualTo(LocalDate.of(2014,8,24));
+    }
+    @Test
+    public void canSetReleaseDate(){
+       television.setReleaseDate(LocalDate.parse("2012-03-12"));
+        assertThat(television.getReleaseDate()).isEqualTo(LocalDate.of(2012,03,12));
+    }
     @Test
     public void canGetDirector() {
         assertThat(television.getDirector()).isEqualTo("john");
@@ -59,5 +67,8 @@ public class TelevisionTest {
     public void canCalculateYearsRun(){
         assertThat(television.calculateYearsRun()).isEqualTo(7);
     }
-
+    @Test
+    public void canStateMediaType(){
+        assertThat(television.stateMediaType()).isEqualTo("Broadcasting");
+    }
 }

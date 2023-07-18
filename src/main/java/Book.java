@@ -33,6 +33,12 @@ public class Book extends Media{
         this.numberOfPages = numberOfPages;
     }
 
+    public double getPrice() {
+        return this.price;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
     public boolean isAudioBookAvailable() {
         return this.audioBookAvailable;
     }
@@ -56,5 +62,8 @@ public class Book extends Media{
     }
     public double calculateRevenue(double audioBookRevenue ){
         return this.price*this.physicalCopiesSold +audioBookRevenue;
+    }
+    public String stateMediaType(){
+        return "Print media";
     }
 }
