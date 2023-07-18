@@ -9,7 +9,7 @@ public class BookTest {
     Book book;
     @BeforeEach
     public void setUp(){
-        book= new Book("Great Gatsby","English", LocalDate.parse("1925-04-10"),"Fitzgerald",356,true);
+        book= new Book("Great Gatsby","English", LocalDate.parse("1925-04-10"),"Fitzgerald",356,true,9.99,1000);
     }
     @Test
     public void canGetAuthor(){
@@ -39,4 +39,23 @@ public class BookTest {
         assertThat(book.isAudioBookAvailable()).isEqualTo(false);
     }
 
+    @Test
+    public void canGetPhysicalCopiesSold(){
+        assertThat(book.getPhysicalCopiesSold()).isEqualTo(1000);
+    }
+    @Test
+    public void canSetCopiesSold(){
+        book.setPhysicalCopiesSold(1000);
+        assertThat(book.getPhysicalCopiesSold()).isEqualTo(1000);
+    }
+    @Test
+    public void canUpdateCopiesSold(){
+        book.updatePhysicalCopiesSold(500);
+        assertThat(book.getPhysicalCopiesSold()).isEqualTo(1500);
+    }
+    @Test
+    public void canCalculateRevenue(){
+        assertThat( book.calculateRevenue()).isEqualTo(9990);
+        assertThat( book.calculateRevenue(1000)).isEqualTo(10990);
+    }
 }

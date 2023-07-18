@@ -47,4 +47,5 @@ public class Television extends Media {
             return period.getYears();
         }
     }
+    // possible to add update num of seasons and episodes
 }

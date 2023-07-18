@@ -6,12 +6,16 @@ public class Book extends Media{
     private int numberOfPages;
 
     private boolean audioBookAvailable;
+    private double price;
+    private int physicalCopiesSold;
 
-    public Book(String title, String language, LocalDate releaseDate, String author , int numberOfPages, boolean audioBookAvailable){
+    public Book(String title, String language, LocalDate releaseDate, String author , int numberOfPages, boolean audioBookAvailable,double price, int physicalCopiesSold){
         super(title,language,releaseDate);
         this.author = author;
         this.numberOfPages = numberOfPages;
         this.audioBookAvailable = audioBookAvailable;
+        this.price = price;
+        this.physicalCopiesSold = physicalCopiesSold;
     }
     public String getAuthor() {
         return this.author;
@@ -37,4 +41,20 @@ public class Book extends Media{
         this.audioBookAvailable = audioBookAvailable;
     }
 
+    public int getPhysicalCopiesSold() {
+        return this.physicalCopiesSold;
+    }
+
+    public void setPhysicalCopiesSold(int physicalCopiesSold) {
+        this.physicalCopiesSold = physicalCopiesSold;
+    }
+    public void updatePhysicalCopiesSold(int moreCopiesSold){
+        this.physicalCopiesSold= this.physicalCopiesSold + moreCopiesSold;
+    }
+    public double calculateRevenue(){
+        return this.price*this.physicalCopiesSold;
+    }
+    public double calculateRevenue(double audioBookRevenue ){
+        return this.price*this.physicalCopiesSold +audioBookRevenue;
+    }
 }

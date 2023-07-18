@@ -9,7 +9,7 @@ public class MediaTest {
     Media media;
     @BeforeEach
     public void setUp(){
-        media= new Book("Great Gatsby","English", LocalDate.parse("1925-04-10"),"Fitzgerald",356,true);
+        media= new Book("Great Gatsby","English", LocalDate.parse("1925-04-10"),"Fitzgerald",356,true,9.99,1000);
     }
     @Test
     public void canGetTitle(){

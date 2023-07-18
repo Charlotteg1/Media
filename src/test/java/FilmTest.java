@@ -58,9 +58,9 @@ public class FilmTest {
         assertThat(film.getRevenue()).isEqualTo(468);
     }
     @Test
-    public void canCalculateMargin(){
+    public void canCalculateProfit(){
         film.setRevenue(100);
         film.setProductionCost(20);
-        assertThat(film.calculateMargin()).isEqualTo(80);
+        assertThat(film.calculateProfit()).isEqualTo(80);
     }
 }

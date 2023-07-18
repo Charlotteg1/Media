@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
-public class Publication {
+public class Company { //meaning publication company or film studio etc
     private String name;
     private ArrayList<Media> media;
-    public Publication(String name) {
+    public Company(String name) {
         this.name = name;
         this.media = new ArrayList<>();
     }

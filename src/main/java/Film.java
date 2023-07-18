@@ -44,8 +44,9 @@ public class Film extends Media{
     public void setRevenue(double revenue) {
         this.revenue = revenue;
     }
-    public double calculateMargin(){
-        return (100 - 100*(this.productionCost/this.revenue));
+    public double calculateProfit(){
+
+        return this.revenue - this.productionCost;
     }
 
 }

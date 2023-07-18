@@ -10,7 +10,7 @@ public class TelevisionTest {
 
     @BeforeEach
     public void setUp() {
-        television = new Television("Money Heist", "Spanish", LocalDate.parse("2014-08-24"), "john", 8, 42, LocalDate.parse("2022-03-18"));
+        television = new Television("Money Heist", "Spanish", LocalDate.parse("2014-08-24"), "john", 8, 42,LocalDate.parse("2022-03-18"));
     }
 
     @Test
