@@ -39,7 +39,7 @@ public class Television extends Media {
         this.endDate = endDate;
     }
     public int calculateYearsRun(){
-        if(endDate==null ){
+        if(endDate==null){
             Period period = Period.between(Media.releaseDate, LocalDate.now() );
             return period.getYears();
         }else{
