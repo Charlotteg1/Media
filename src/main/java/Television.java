@@ -1,12 +1,14 @@
 import java.time.LocalDate;
+import java.time.Period;
 
-public class Television {
+public class Television extends Media {
     private String director;
     private int numberOfSeasons;
     private int numberOfEpisodes;
     private LocalDate endDate;
 
-    public Television(String director, int numberOfSeasons, int numberOfEpisodes, LocalDate endDate) {
+    public Television(String title,String language, LocalDate releaseDate, String director, int numberOfSeasons, int numberOfEpisodes, LocalDate endDate) {
+        super(title,language,releaseDate);
         this.director = director;
         this.numberOfSeasons = numberOfSeasons;
         this.numberOfEpisodes = numberOfEpisodes;
@@ -36,5 +38,13 @@ public class Television {
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
-
+    public int calculateYearsRun(){
+        if(endDate==null ){
+            Period period = Period.between(Media.releaseDate, LocalDate.now() );
+            return period.getYears();
+        }else{
+            Period period = Period.between(Media.releaseDate,this.endDate );
+            return period.getYears();
+        }
+    }
 }

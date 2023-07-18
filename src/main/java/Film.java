@@ -1,10 +1,13 @@
-public class Film {
+import java.time.LocalDate;
+
+public class Film extends Media{
     private String director;
     private boolean shownInCinema;
     private int minutesLong;
     private double productionCost;
     private double revenue;
-    public Film(String director, boolean shownInCinema, int minutesLong, double productionCost, double revenue) {
+    public Film(String title, String language, LocalDate releaseDate, String director, boolean shownInCinema, int minutesLong, double productionCost, double revenue) {
+        super(title,language,releaseDate);
         this.director = director;
         this.shownInCinema = shownInCinema;
         this.minutesLong = minutesLong;
@@ -41,6 +44,8 @@ public class Film {
     public void setRevenue(double revenue) {
         this.revenue = revenue;
     }
-
+    public double calculateMargin(){
+        return (100 - 100*(this.productionCost/this.revenue));
+    }
 
 }
